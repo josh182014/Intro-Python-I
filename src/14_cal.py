@@ -19,6 +19,23 @@ and does the following:
    Then exit the program.
 """
 
-import sys
+# import sys
 import calendar
 from datetime import datetime
+
+
+def cal(*args):
+    if not args:
+        print(calendar.month(datetime.now().year, datetime.now().month))
+    elif len(args) == 1:
+        print(calendar.month(datetime.now().year, args[0]))
+    elif len(args) == 2:
+        print(calendar.month(args[1], args[0]))
+    else:
+        print('Usage: python [month] [year]')
+
+
+cal()
+cal(4)
+cal(4, 2018)
+cal(4, 2, 4)
